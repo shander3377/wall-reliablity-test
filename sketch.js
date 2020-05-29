@@ -6,7 +6,7 @@ function setup() {
   speed = random(223,321);
   weight = random(30,52);
   thickness = random(22,83)
-  bullet = createSprite(50,200,30,50)
+  bullet = createSprite(50,200,50,10)
   bullet.velocityX = speed;
   wall=createSprite(1500,200,thickness,height/2)
 }
@@ -14,7 +14,7 @@ function setup() {
 function draw() {
   background(255,255,255);  
   if (hasCollided(bullet, wall)) {
-         bullet.velocityX = 0.2;
+         bullet.velocityX = 0;
          var damage = 0.5 * weight * speed * speed / thickness * thickness * thickness
          if(damage < 10) {
            wall.shapeColor = "green";
